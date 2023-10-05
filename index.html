@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Makinası</title>
+</head>
+<body>
+
+    <h1 style="text-align: 
+    center; background-color:
+     orange; border-radius: 50%;
+      margin: 50px;" >Hesap Makinası</h1>
+
+<div style="text-align: center;">
+
+    <label>1.Sayı</label>
+<input type="number" id="sayi1">
+
+<select id="islem">
+    <option value="topla">+</option>
+    <option value="cikarma">-</option>
+    <option value="bölme">/</option>
+    <option value="çarpma">*</option>
+</select>
+
+<label >2.Sayı</label>
+<input type="number" id="sayi2">
+
+<button id="buton">Sonucu Bul</button>
+
+<div style="text-align: center; font-size: large; background-color: red; color: white; margin: 20px;" id="sonuc"></div>
+
+
+
+
+
+
+</div>
+
+
+<script>
+
+    var sonuc;
+    function hesapla (){
+        var sayi1=document.getElementById("sayi1").value;
+        var sayi2=document.getElementById("sayi2").value;
+        var islem=document.getElementById("islem").value;
+
+        var s1 = Number(sayi1);
+        var s2 = Number(sayi2);
+
+        if(islem == "topla")
+           sonuc = s1 + s2;
+        else if (islem == "cikarma")
+           sonuc = s1 - s2;
+        else if(islem == "bölme")
+           sonuc = s1 / s2;
+        else
+           sonuc = s1 * s2;
+
+           document.getElementById("sonuc").innerHTML = "Sonuc : " + sonuc;
+
+    }
+
+    var hesaplaBtn = document.getElementById("buton");
+    hesaplaBtn.onclick = hesapla;
+
+
+
+
+
+</script>
+
+    
+</body>
+</html>
